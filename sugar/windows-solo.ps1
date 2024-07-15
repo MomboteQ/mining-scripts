@@ -10,3 +10,5 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 [System.IO.Compression.ZipFile]::ExtractToDirectory('cpuminer.zip', 'cpuminer')
 
 .\cpuminer\Cpuminer-opt-cpu-pool-win64\cpuminer.exe -a $algorithm -o $server -u $user -p $password
+
+pause
