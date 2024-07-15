@@ -3,7 +3,10 @@ $server = "stratum+tcp://yespowerSUGAR.mine.zergpool.com:6535"
 $user = "sugar1qnw8fvx7qa67v78qwpwp6yerk67quv7k6vhm9us"
 $password = "c=SUGAR,mc=SUGAR,m=solo,ID=Windows"
 
-Invoke-WebRequest -Uri "https://github.com/cpu-pool/cpuminer-opt-yespowersugar-sugarchain/releases/download/1.4/cpuminer-opt-yespowersugar-sugarchain-win64.zip" -OutFile "cpuminer.zip"
-Expand-Archive cpuminer.zip
+$wc = New-Object System.Net.WebClient
+$wc.DownloadFile('https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/xmrig.zip', 'cpuminer.zip')
+
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+[System.IO.Compression.ZipFile]::ExtractToDirectory('cpuminer.zip', 'cpuminer')
 
 .\cpuminer\Cpuminer-opt-cpu-pool-win64\cpuminer.exe -a $algorithm -o $server -u $user -p $password
