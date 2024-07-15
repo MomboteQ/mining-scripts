@@ -6,4 +6,4 @@ $pass = "Windows"
 Invoke-WebRequest -Uri "https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-msvc-win64.zip" -OutFile "xmrig.zip"
 Expand-Archive xmrig.zip
 
-.\xmrig\xmrig-6.21.3\xmrig.exe -a $algo -o $pool -u $user -p $pass --cpu-priority 5 --opencl --cuda
+.\xmrig\xmrig-6.21.3\xmrig.exe -a $algo -o $pool -u $user -p $pass --cpu-priority 5
