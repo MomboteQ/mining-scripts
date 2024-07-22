@@ -1,6 +1,6 @@
 $threads = (Get-CimInstance -ClassName Win32_Processor).NumberOfLogicalProcessors
 $algorithm = "verus"
-$server = "stratum+tcp://verus.farm:9999"
+$server = "stratum+tcp://de.vipor.net:5040"
 $user = "RHACKERwSVgjTvV4vNiTjmrkLTD7a92ALD.Windows"
 $password = "x"
 
